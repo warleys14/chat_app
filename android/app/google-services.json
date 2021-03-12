@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "443372277042",
+    "project_id": "w-chat-app",
+    "storage_bucket": "w-chat-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443372277042:android:42a51fdd35147e8c7c5b2b",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443372277042-20oak8ju0nbehkovknghvfs5vhsughpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXGGjGxF9lnQQj8d2CJFh99jggTJrgC0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443372277042-20oak8ju0nbehkovknghvfs5vhsughpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
