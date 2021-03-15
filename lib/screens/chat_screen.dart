@@ -25,8 +25,12 @@ class ChatScreen extends StatelessWidget {
           },
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
           child: Icon(Icons.add),
+          onPressed: () {
+            FirebaseFirestore.instance
+                .collection('chat')
+                .add({'text': 'Sim, e você?'});
+          },
         ));
   }
 }
