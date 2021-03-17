@@ -18,7 +18,7 @@ class OnboardingContent extends StatelessWidget {
       children: [
         Spacer(),
         Text(
-          "CHAT APP",
+          "Chat App",
           style: TextStyle(
               color: primaryColor, fontSize: 25, fontWeight: FontWeight.bold),
         ),
@@ -28,8 +28,8 @@ class OnboardingContent extends StatelessWidget {
         ),
         Image.asset(
           image,
-          height: 230,
-          width: 230,
+          height: 250,
+          width: 250,
         )
       ],
     );

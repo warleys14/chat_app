@@ -23,45 +23,71 @@ class _BodyState extends State<Body> {
     },
   ];
 
+  int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-                flex: 3,
+                flex: 5,
                 child: PageView.builder(
+                    onPageChanged: (value) {
+                      setState(() {
+                        currentPage = value;
+                      });
+                    },
                     itemCount: onboardingData.length,
                     itemBuilder: (context, index) => OnboardingContent(
                           image: onboardingData[index]["image"],
                           text: onboardingData[index]["title"],
                         ))),
             Expanded(
-                flex: 2,
-                child: Column(
-                  children: [
-                    Row(
-                      children: List.generate(onboardingData.length,
-                          (index) => buildDot(index: index)),
-                    )
-                  ],
-                ))
+              flex: 2,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(onboardingData.length,
+                        (index) => buildDot(index: index)),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 40,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text("Continuar"),
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(primaryColor)),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
 
-  //TODO: Finish the page indicator and button
-  Container buildDot({int index}) {
-    return Container(
+  AnimatedContainer buildDot({int index}) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 200),
       margin: EdgeInsets.only(right: 5),
-      width: 6,
+      width: currentPage == index ? 20 : 6,
       height: 6,
       decoration: BoxDecoration(
-          color: primaryColor, borderRadius: BorderRadius.circular(3)),
+          color: currentPage == index ? primaryColor : Colors.greenAccent[100],
+          borderRadius: BorderRadius.circular(3)),
     );
   }
 }
