@@ -1,4 +1,5 @@
 import 'package:chat_app/constants.dart';
+import 'package:chat_app/screens/chat_screen.dart';
 import 'package:chat_app/screens/onboarding/onboarding_content.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,12 @@ class _BodyState extends State<Body> {
                       width: double.infinity,
                       height: 40,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ChatScreen()));
+                        },
                         child: Text("Continuar"),
                         style: ButtonStyle(
                             backgroundColor:

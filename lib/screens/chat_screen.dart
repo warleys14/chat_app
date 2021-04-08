@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../constants.dart';
+
 class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Center(child: Text("Chat"))),
+        appBar: AppBar(
+            title: Center(child: Text("Chat")), backgroundColor: primaryColor),
         body: StreamBuilder(
           stream: FirebaseFirestore.instance.collection('chat').snapshots(),
           builder: (context, snapshot) {
@@ -25,6 +28,7 @@ class ChatScreen extends StatelessWidget {
           },
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: primaryColor,
           child: Icon(Icons.add),
           onPressed: () {
             FirebaseFirestore.instance
