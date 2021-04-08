@@ -1,3 +1,4 @@
+import 'package:chat_app/constants.dart';
 import 'package:chat_app/widgets/auth_form.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,6 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
-    return AuthForm();
+    return Scaffold(backgroundColor: primaryColor, body: AuthForm());
   }
 }
