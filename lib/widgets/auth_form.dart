@@ -30,9 +30,8 @@ class _AuthFormState extends State<AuthForm> {
                     SizedBox(
                       height: 12,
                     ),
-                    //TODO: Resolver mudanca desses widgets
-                    RaisedButton(child: Text("Entrar"), onPressed: () {}),
-                    FlatButton(
+                    ElevatedButton(onPressed: () {}, child: Text("Entrar")),
+                    TextButton(
                         onPressed: () {}, child: Text("Criar uma nova conta?"))
                   ],
                 ),
