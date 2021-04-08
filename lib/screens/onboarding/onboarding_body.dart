@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:chat_app/constants.dart';
+import 'package:chat_app/screens/auth_screen.dart';
 import 'package:chat_app/screens/chat_screen.dart';
 import 'package:chat_app/screens/onboarding/onboarding_content.dart';
 import 'package:flutter/material.dart';
@@ -67,9 +70,14 @@ class _BodyState extends State<Body> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ChatScreen()));
+                                  builder: (context) => AuthScreen()));
                         },
-                        child: Text("Continuar"),
+                        child: Text(
+                          "Continuar",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                         style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all(primaryColor)),
